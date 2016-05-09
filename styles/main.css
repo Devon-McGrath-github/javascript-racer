@@ -1,25 +1,30 @@
 body {
-  background-image: url("../images/background.jpg");
-  background-repeat: repeat;
+	background-image: url("../images/background.jpg");
+	background-repeat: repeat;
 
 }
 
 .container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 
 .racer_table td {
-  background-color: white;
-  height: 50px;
-  width: 50px;
+	background-color: white;
+	height: 150px;
+	width: 150px;
 }
 
-.racer_table td.active {
-  background-color: black;
+#player1_strip .active {
+	background-image: url("../images/placeholder.jpg");
+	height: 150px;
+	width: 150px;
+}
+#player2_strip .active {
+	background-image: url("../images/placeholder.jpg");
 }
 
 a:hover {
- text-decoration: underline;
+	text-decoration: underline;
 }
