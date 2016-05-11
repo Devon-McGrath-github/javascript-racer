@@ -1,21 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
+initiateZombieRaces();
+})  // All your code goes here... functions, variables, everything!
 
-  // All your code goes here... functions, variables, everything!
+ 
+var player1 = document.getElementById('player1_strip');
+var player2 = document.getElementById('player2_strip');
+
+function initiateZombieRaces() {
+    document.addEventListener('keyup', keyPress);
+};
 
 
-var start1 = 0; // Player 1 Position
-var start2 = 0; // Player 2 Position
 
-function updatePlayerPosition (){
-	if (player1[start1].className == "active") {
-		;
-	}
+function keyPress (event) {
+    if (event.which === 81) {
+        updatePlayerPosition('player1_strip');
+    }
+    else if (event.which === 80) {
+        updatePlayerPosition('player2_strip');
+    }
+};
+
+function updatePlayerPosition (player) {
+	playerPosition = document.getElementById(player);
+	for (var i = 0; i < playerPosition.children.length - 1; i++) {
+		if (playerPosition.children[i].className === 'active') {
+			playerPosition.children[i].className = '';
+			playerPosition.children[i].nextElementSibling.className = 'active';
+			if (playerPosition.children[i].nextElementSibling === playerPosition.children[playerPosition.children.length -1]) {
+				document.removeEventListener('keyup', keyPress);
+			// end game here (point to a new function most likely)
+        }
+        else {
+            break;
+        }
+    }
 }
-
-function updatePlayerPosition (){
-	if (player1[start2].className == "active") {
-		;
-	}
-}
-
-})
+};

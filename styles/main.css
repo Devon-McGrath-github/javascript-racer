@@ -1,8 +1,11 @@
 body {
 	background-image: url("../images/background.jpg");
 	background-repeat: repeat;
-
+	/* background not properly sized yet*/
 }
+
+/* Going to make the header and image so not going to style anything yet */
+/* not sure if paragraphs will stay or not */
 
 .container {
 	display: flex;
