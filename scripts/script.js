@@ -13,9 +13,11 @@ function initiateZombieRaces() {
 
 
 function keyPress (event) {
+	// key q
     if (event.which === 81) {
         updatePlayerPosition('player1_strip');
     }
+	// key p
     else if (event.which === 80) {
         updatePlayerPosition('player2_strip');
     }
@@ -30,6 +32,7 @@ function updatePlayerPosition (player) {
 			if (playerPosition.children[i].nextElementSibling === playerPosition.children[playerPosition.children.length -1]) {
 				document.removeEventListener('keyup', keyPress);
 			// end game here (point to a new function most likely)
+			gameOver();
         }
         else {
             break;
@@ -37,3 +40,9 @@ function updatePlayerPosition (player) {
     }
 }
 };
+
+// Function for handling game over.
+function gameOver() {
+	var anotherGame = confirm("More Brains?")
+	
+}
